@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --bg-color: #e6e6e6;
+    --bg-color-light: #e6e6e6;
+    --bg-color-dark: #000000;
+    --card-bg-color: #c3c3c5;
+    --card-bg-color-hover: #acacb9;
+    --card-bg-color-light: #c3c3c5;
+    --card-bg-color-dark: #29292E;
+    --card-bg-color-light-hover: #acacb9;
+    --card-bg-color-dark-hover: #606066;
+    --card-selected-bg-color: #02789c;
+    --card-selected-bg-color-light: #02789c;
+    --card-selected-bg-color-dark: #02789c;
+
+    --icon-color:rgb(50, 50, 57);
+    --icon-color-light:rgb(50, 50, 57);
+    --icon-color-dark:rgb(196, 196, 204);
+    --icon-selected-color:rgb(255, 255, 255);
+    --icon-selected-color-light:rgb(255, 255, 255);
+    --icon-selected-color-dark:rgb(255, 255, 255);
+
+    --fc-primary: #323239;
+    --fc-primary-dark: #FFFFFF;
+    --fc-primary-light: #323239;
+    --fc-primary-hover: #9b9999;
+    --fc-primary-light-hover: #9b9999;
+    --fc-primary-dark-hover: #979797;
+
+    --fs-primary: 12.6rem;
+
+}
+
+body {
+    background: var(--bg-color);
+
+    height: 100vh;
+    display: grid;
+    place-items: center;
+
+    height: 100vh;
+}
+
+.darkMode {
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: clamp(1rem, .5rem + 3vh, 6rem);
+    margin-right: clamp(3rem, 1rem + 4vw, 6rem);
+}
+
+.darkMode button {
+    background: none;
+    border-style: none;
+    transition: transform .3s;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+}
+
+.darkMode button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+main {
+    margin-top: clamp(8rem, 4rem + 4vh, 10rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: clamp(9.6rem, 4rem + 12vw, 19.2rem);
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+}
+
+h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--fs-primary);
+    line-height: 14.8rem;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--fc-primary)
+}
+
+h2 #minutes:hover, #seconds:hover {
+    cursor: pointer;
+    color: var(--fc-primary-hover);
+    transition: color .3s;
+    -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -ms-transition: color .3s;
+    -o-transition: color .3s;
+}
+
+.timerController {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+.timer button {
+    background: none;
+    border-style: none;
+    transition: transform .3s;
+    -webkit-transition: transform .3s;
+    -moz-transition: transform .3s;
+    -ms-transition: transform .3s;
+    -o-transition: transform .3s;
+}
+
+.timer button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.soundTypeSelector {
+    display: grid;
+    grid-template-columns: repeat(2, 13.8rem);
+    grid-auto-rows: 15.2rem;
+    gap: 3.2rem;
+}
+
+.soundTypeSelector button {
+    border-style: none;
+    border-radius: 2.4rem;
+    transition: background .3s;
+    -webkit-border-radius: 2.4rem;
+    -moz-border-radius: 2.4rem;
+    -ms-border-radius: 2.4rem;
+    -o-border-radius: 2.4rem;
+    -webkit-transition: background .3s;
+    -moz-transition: background .3s;
+    -ms-transition: background .3s;
+    -o-transition: background .3s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem
+}
+
+#volumforest, #volumrain, #volumcoffeeshop, #volumfireplace {
+    width: 9rem;
+    height: .4rem;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: .5rem;
+    background-color: #FFFFFF;
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+    -webkit-border-radius: .5rem;
+    -moz-border-radius: .5rem;
+    -ms-border-radius: .5rem;
+    -o-border-radius: .5rem;
+}
+
+#forest, #rain, #coffeeshop, #fireplace {
+    background-color: var(--card-bg-color);
+}
+
+.soundTypeSelector button:hover {
+    background-color: var(--card-bg-color-hover);
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+#play, #pause, #stop, 
+#add5min, #minus5min, 
+#forestIco, #rainIco, 
+#coffeeshopIco, 
+#fireplaceIco {
+    fill: var(--icon-color);
+}
+
+@media (min-width: 700px) {
+    main {
+        flex-direction: row;
+    }
+}
+
+@media (max-height: 400px) {
+    .darkMode {
+        transform: scale(.8);
+        -webkit-transform: scale(.8);
+        -moz-transform: scale(.8);
+        -ms-transform: scale(.8);
+        -o-transform: scale(.8);
+
+        margin-top: 1rem;
+}
+    main {
+        margin-top: 5rem;
+}
+    .timer {
+        transform: scale(.9);
+        -webkit-transform: scale(.9);
+        -moz-transform: scale(.9);
+        -ms-transform: scale(.9);
+        -o-transform: scale(.9);
+}
+    .soundTypeSelector {
+        transform: scale(.9);
+        -webkit-transform: scale(.9);
+        -moz-transform: scale(.9);
+        -ms-transform: scale(.9);
+        -o-transform: scale(.9);
+}
+
+}
